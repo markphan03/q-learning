@@ -27,11 +27,11 @@
 import random
 import numpy as np
 import csv
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 MAX_ITERATION = 250000
 ALPHA = 0.5
-BETA = 0.8
+BETA = 0.9
 EPSILON = 0.1
 
 qTable = []
