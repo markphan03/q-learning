@@ -188,7 +188,7 @@ it_lrs = []
 
 while (t < MAX_ITERATION):
    alpha = computeAlpha(ALPHA, t) # only if we want alpha to be dependent on t
-   it_lrs.append(alpha)
+   # it_lrs.append(alpha)
    a = decideAction(s, t) 
    s_next = obtainNextState(s,a)
    if (s == s_next):
@@ -211,10 +211,25 @@ for i in range(0,MAX_NUM_STATES):
 # print out final total rewards
 print("Total rewards = " + str(rewardSoFar))
 
-its = [i for i in range(MAX_ITERATION)]
-# plot learning rate schedule
-plt.plot(its, it_lrs, color='blue', marker="o")
-plt.xlabel('Iteration')
-plt.ylabel('Learning Rate')
-plt.title('Learning Rate Schedule')
-plt.show()
+# its = [i for i in range(MAX_ITERATION)]
+# # plot learning rate schedule
+# try:
+#    # Try to use an ASCII/terminal plotting library first so the plot can be
+#    # rendered directly in a terminal (no GUI required).
+#    import plotext as pxt
+
+#    # plotext expects lists of numbers; these are already lists
+#    pxt.plot(its, it_lrs, color='blue')
+#    pxt.title('Learning Rate Schedule')
+#    pxt.xlabel('Iteration')
+#    pxt.ylabel('Learning Rate')
+#    pxt.show()
+# except Exception:
+#    # Fallback: save the matplotlib figure to a PNG file
+#    plt.plot(its, it_lrs, color='blue')
+#    plt.xlabel('Iteration')
+#    plt.ylabel('Learning Rate')
+#    plt.title('Learning Rate Schedule')
+#    outfn = "learning_rate.png"
+#    plt.savefig(outfn)
+#    print("Plot saved to {}. Open it with an image viewer if your terminal doesn't show images.".format(outfn))
